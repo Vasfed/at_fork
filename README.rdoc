@@ -8,11 +8,13 @@ Allows to track process forks in ruby. Normally you do not need it, as all handl
 
 == FEATURES/PROBLEMS:
 
-* not well-tested
+* allows simple hooks
+* hooks are run in order of addition
+* exceptions from hooks shall not bubble from handler (better handle 'em yourself with smth like hoptoad)
+* not well-tested yet
 
 == SYNOPSIS:
-
-  AtFork.before{
+	AtFork.before{
 		#code to be run when process forks
 	}
 	AtFork.child{
@@ -22,6 +24,7 @@ Allows to track process forks in ruby. Normally you do not need it, as all handl
 		#code to be run in parent after fork
 	}
 
+
 == REQUIREMENTS:
 
 * Posix OS capable of pthreads like linux, mac os
@@ -29,7 +32,7 @@ Allows to track process forks in ruby. Normally you do not need it, as all handl
 == INSTALL:
 
 * add this to your Gemfile:
-	gem 'at_fork', :git => "http://github.com/Vasfed/ruby_at_fork"
+	gem 'at_fork', :git => "http://github.com/Vasfed/at_fork"
 
 == LICENSE:
 
