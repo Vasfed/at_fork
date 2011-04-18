@@ -4,6 +4,8 @@ Manifest.txt
 README.rdoc
 Rakefile
 at_fork.gemspec
+ext/at_fork/at_fork.c
+ext/at_fork/extconf.rb
 lib/at_fork.rb
 script/console
 script/destroy
