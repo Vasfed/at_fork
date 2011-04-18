@@ -1,6 +1,6 @@
 = at_fork
 
-* http://github.com/Vasfed/ruby_at_fork
+* http://github.com/Vasfed/at_fork
 
 == DESCRIPTION:
 
@@ -14,25 +14,26 @@ Allows to track process forks in ruby. Normally you do not need it, as all handl
 * not well-tested yet
 
 == SYNOPSIS:
-	AtFork.before{
-		#code to be run when process forks
-	}
-	AtFork.child{
-		#code to be run in child process after fork
-	}
-	AtFork.parent{
-		#code to be run in parent after fork
-	}
+ AtFork.before{
+ 	#code to be run when process forks
+ }
+ AtFork.child{
+ 	#code to be run in child process after fork
+ }
+ AtFork.parent{
+ 	#code to be run in parent after fork
+ }
 
 
 == REQUIREMENTS:
 
-* Posix OS capable of pthreads like linux, mac os
+* Posix OS capable of pthreads like linux, mac os, freebsd
 
 == INSTALL:
 
 * add this to your Gemfile:
 	gem 'at_fork', :git => "http://github.com/Vasfed/at_fork"
+* run `bundle install` and you're done
 
 == LICENSE:
 
