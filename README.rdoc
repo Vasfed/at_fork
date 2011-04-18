@@ -1,0 +1,57 @@
+= at_fork
+
+* http://github.com/Vasfed/ruby_at_fork
+
+== DESCRIPTION:
+
+Allows to track process forks in ruby. Normally you do not need it, as all handles etc. are copied, but if you have low-level handles to external resources - this may help.
+
+== FEATURES/PROBLEMS:
+
+* not well-tested
+
+== SYNOPSIS:
+
+  AtFork.before{
+		#code to be run when process forks
+	}
+	AtFork.child{
+		#code to be run in child process after fork
+	}
+	AtFork.parent{
+		#code to be run in parent after fork
+	}
+
+== REQUIREMENTS:
+
+* Posix OS capable of pthreads like linux, mac os
+
+== INSTALL:
+
+* add this to your Gemfile:
+	gem 'at_fork', :git => "http://github.com/Vasfed/ruby_at_fork"
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2011 Vasily Fedoseyev
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
